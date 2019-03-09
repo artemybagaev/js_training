@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // пусть дан массив с числами, давайте запишем в новый массив только те элементы, сумма цифр в которых от 1 до 9.
+
+    // var arr = [1, 19, 8, 13, 4, 5];
+    // var result = [];
+    //
+    // for (var i = 0; i < 10; i++) {
+    //    if (getRange(arr[i])) {
+    //      result.push(arr[i]);
+    //    }
+    // }
+    //
+    // console.log(result);
+    //
+    // function getDigits(num) {
+    //   var str = String(num);
+    //   return str.split('');
+    // }
+    //
+    // function arraySum(arr) {
+    //   var res = 0;
+    //   for (var i = 0; i < arr.length; i++) {
+    //     res += Number(arr[i]);
+    //   }
+    //   return res;
+    // }
+    //
+    // function getRange(num) {
+    //   var sum = arraySum(getDigits(num));
+    //   return num > 0 && num < 10;
+    // }
+
+    // Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10.
+    // Если это так - пусть функция возвращает true, если не так - false.
+
+    // function isNumberInRange (num) {
+    //   return num > 0 && num <= 10;
+    // }
+    //
+    // console.log(isNumberInRange(10))
+
+    // Дан массив с числами. Запишите в новый массив только те числа, которые больше нуля и меньше 10-ти.
+    // Для этого используйте вспомогательную функцию isNumberInRange из предыдущей задачи.
+
+    // var arr = [4,6,2,8,9,45,73,43,5,78,94,25,4,3];
+    // var newArr = [];
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    //   if (isNumberInRange(arr[i])) {
+    //     newArr.push(arr[i]);
+    //   }
+    // }
+    //
+    // console.log(newArr);
+    //
+    // function isNumberInRange (num) {
+    //   return num > 0 && num <= 10;
+    // }
+
+    // Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
+
+    // function getDigitsSum(num) {
+    //   var res = String(num);
+    //   var sum = 0;
+    //   for (let i = 0; i < res.length; i++) {
+    //     sum += Number(res[i]);
+    //   }
+    //   return sum;
+    // }
+    //
+    // console.log(getDigitsSum(456));
+
+    // Найдите все года от 1 до 2019, сумма цифр которых равна 13.
+    // Для этого используйте вспомогательную функцию getDigitsSum из предыдущей задачи.
+
+    // function getDigitsSum(num) {
+    //   var res = String(num);
+    //   var sum = 0;
+    //   for (let i = 0; i < res.length; i++) {
+    //     sum += Number(res[i]);
+    //   }
+    //   return sum;
+    // }
+    //
+    // var years = [];
+    //
+    // for (let i = 1; i <= 2019; i++) {
+    //   if (getDigitsSum(i) == 13) {
+    //     years.push(i);
+    //   }
+    // }
+    //
+    // console.log(years);
+
+    // Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет.
+    // Если четное - пусть функция возвращает true, если нечетное - false.
+
+    // function isEven(num) {
+    //   return num % 2 == 0;
+    // }
+    //
+    // console.log(isEven(5));
+
+    // Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел.
+    // Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+
+    // var arr = [0,4,7,3,5,6,9,5,4,7,8,3,2,4,56,6,8,69];
+    // var newArr = [];
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    //   if (isEven(i)) {
+    //     newArr.push(i);
+    //   }
+    // }
+    //
+    // console.log(newArr);
+    //
+    // function isEven(num) {
+    //   return num % 2 == 0;
+    // }
+
+    // Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей
+    // (чисел, на которое делится данное число).
+
+    function getDivisors(num) {
+      var res = [];
+      for (let i = 1; i < num; i++) {
+        if (num % i == 0) {
+          res.push(i);
+        }
+      }
+      return res;
+    }
+
+    console.log(getDivisors(1435));
+  </script>
+</body>
+</html>
