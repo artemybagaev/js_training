@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function inArray(value, arr) {
+  	// for (var i = 0; i < arr.length; i++) {
+  	// 	if(arr[i] == value) {
+  	// 		return true;
+  	// 	}
+  	// }
+    //
+    // 	return false;
+    // }
+    //
+    // var arr = [1, 2, 3, 4, 5];
+    // alert(inArray(3, arr));
+
+    // function isSimple(num) {
+    //   for (let i = 0; i < num; i++) {
+    //     if (num % i == 0) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // }
+
+    // function inArray(value, arr) {
+  	// for (var i = 0; i < arr.length; i++) {
+  	// 	if(arr[i] == value) {
+  	// 		return true;
+  	// 	}
+  	// }
+    //
+    // 	return false;
+    // }
+    //
+    // function getIntersection(arr1, arr2) {
+  	// var result = [];
+    //
+  	// for (var i = 0; i < arr1.length; i++) {
+  	// 	if(inArray(arr1[i], arr2)) {
+  	// 		result.push(arr1[i]);
+  	// 	}
+  	// }
+  	// return result;
+    // }
+    //
+    // console.log(getIntersection([1, 2, 3], [2, 3, 4]));
+
+    // Дана строка. Сделайте заглавным первый символ каждого слова этой строки.
+    // Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку,
+    // делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой.
+
+    // var str = 'You should read';
+    // var res = [];
+    //
+    // var arr = str.split(' ');
+    // for (let i = 0; i < arr.length; i++) {
+    //   res.push(ucfirst(arr[i]));
+    // }
+    //
+    // var newStr = res.join(' ');
+    //
+    // console.log(res);
+    // console.log(newStr);
+    //
+    // function ucfirst(word) {
+    //   return word[0].toUpperCase() + word.substr(1);
+    // }
+
+    // Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+
+    // function ucfirst(str) {
+  	//   return str[0].toUpperCase() + str.substr(1);
+    // }
+    //
+    // var str = 'var_text_hello';
+    // var res = [];
+    //
+    // var newArr = str.split('_');
+    // res.push(newArr[0]);
+    //
+    // for (let i = 1; i < newArr.length; i++) {
+    //   var newStr = ucfirst(newArr[i]);
+    //   res.push(newStr);
+    // }
+    //
+    // var final = res.join('');
+    //
+    // console.log(final);
+
+    // Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
+    // Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск.
+    // Функция должна возвращать true или false.
+
+    // function inArray(value,arr) {
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] == value) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // }
+    //
+    // var mas = [4,6,78,432,6,5,7,8,9,3,4,5,6,7];
+    //
+    // console.log(inArray(1,mas));
+
+    // Дана строка, например, '123456'. Сделайте из нее '214365';
+
+    // var str = '123456';
+    // var res = [];
+    //
+    // var newArr = str.split('');
+    //
+    // for (let i = 0; i < newArr.length; i++) {
+    //
+    // }
+    //
+
+    // var str = '123456';
+    //
+    // function toRearrange(text) {
+    //   var arr = text.split('');
+    //   var arrNew = [];// сюда будем добавлять пары 21, 43 и т.д.
+    //
+    //   for (var i = 0; i < arr.length; i += 2) { // нарезаем пары
+    //     var temp = arr.slice(i, i + 2).reverse(); // маленький массив из очередных 2 элеметов, поменянных местами
+    //     arrNew = arrNew.concat(temp); // push() тут не подходит
+    //   }
+    //
+    // str = arrNew.join('');
+    // return str;
+    // }
+    //
+    // console.log(toRearrange(str));
+    // //214365
+
+    // Дан массив с числами. Выведите последовательно его элементы используя рекурсию и не используя цикл.
+
+    // var arr = [4,5,7,8,4,3,5,6,7,8,9,4,6,34,65,86,57,24,35,13];
+    //
+    // function win(arr) {
+    //   console.log(arr[0]);
+    //   arr.splice(0,1);
+    //   if (arr.length > 0) {
+    //     win(arr);
+    //   }
+    // }
+    //
+    // win(arr);
+
+    // Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры.
+    // И так, пока сумма не станет однозначным числом (9 и менее).
+
+    // function wholeDevider (num) {
+    //   var sum = getDigitsSum(num);
+    //
+    //   if (sum >= 9) {
+    //     return wholeDevider (sum);
+    //   } else {
+    //     return sum;
+    //   }
+    // }
+    //
+    // function getArr (num) {
+    //   return String(num).split('');
+    // }
+    //
+    // function getSum (arr) {
+    //   let res = 0;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     res += Number(arr[i]);
+    //   }
+    //   return res;
+    // }
+    //
+    // function getDigitsSum(num) {
+    //   return getSum(getArr(num));
+    // }
+    //
+    // console.log(wholeDevider(456));
+
+
+  </script>
+</body>
+</html>
