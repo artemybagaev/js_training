@@ -8,10 +8,17 @@
 </head>
 <body>
   <script>
-  var now = new Date();
-var date = new Date(2015, 23, 4, 12, 59, 59);
-var diff = now - date;
-document.write(diff);
+
+  function dateValidator(year, month, day) {
+    var now = new Date (year, month - 1, day);
+    if (now.getFullYear() == year && now.getMonth() == month - 1 && now.getDate() == day) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  console.log(dateValidator(2015,11,24));
 
   </script>
 </body>
