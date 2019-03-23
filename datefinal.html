@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   Создайте инпут, в который пользователь вводит дату своего рождения в формате '2014-12-31' (с конкретным годом). По потери фокуса выведите под инпутом сколько дней осталось до его дня рождения. Воспользуйтесь методом Date.parse. <br>
+   
+   <input type="text" id = "birthday_date" placeholder = "Год вашего рождения"><br>
+   <input type="submit" id = "but" value = "Сколько времени осталось до др?">
+
+<script>
+    var button = document.querySelector('#but');
+    button.addEventListener('click', addelem);
+    
+    function addelem() {            //Добавляет результат по клику на кнопку
+        var inp = document.querySelector('#birthday_date');
+        var date = new Date(inp.value);
+        var birthDate = date.getMonth() + '-' + date.getDate();
+        console.log(howmuch(birthDate));
+        
+        var div = document.createElement('div');
+        document.body.appendChild(div).innerHTML = howmuch(birthDate);
+    }
+    
+    function howmuch(date) {        //считает сколько дней осталось до др
+        let now = new Date();
+        let splitNow = now.getMonth() + '-' + now.getDate();
+        if (leapYear(now.getFullYear())) {
+            if (date < splitNow) {
+                return Math.floor((Date.parse(splitNow) - Date.parse(date)) / (1000 * 60 * 60 * 24) + 366);
+            } else {
+                return Math.floor((Date.parse(date) - Date.parse(splitNow)) / (1000 * 60 * 60 * 24));
+            }
+        } else {
+             if (date < splitNow) {
+                return Math.floor((Date.parse(splitNow) - Date.parse(date)) / (1000 * 60 * 60 * 24) + 365);
+            } else {
+                return Math.floor((Date.parse(date) - Date.parse(splitNow)) / (1000 * 60 * 60 * 24));
+            }
+        }
+        
+    }
+    
+    function yearCutter(string) {  //Удаляет год в дате
+        return string.substr(5);
+    }
+    
+    function leapYear(year) {       //Проверяет вискосный ли год
+        return new Date(year, 2 ,0).getDate() === 29;
+    }
+    
+    
+</script>
+</body>
+</html>
