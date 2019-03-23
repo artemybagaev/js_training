@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+        var account = 0;
+        var ticketPrice = 38; 
+        var count = 0;
+        
+        console.log(replenish(500,account));
+        
+        console.log(account);
+        
+//        while (account != last(num,ticketPrice)) {
+//            account -= ticketPrice;
+//            count++;
+//        }
+//        account += num;
+//        console.log(account);
+        
+        function replenish(summ,account) {
+            return account += summ;
+        }
+        
+        function last(summ, price) {
+            return summ % price;
+        }
+
+    </script>
+</body>
+</html>
+
+
+
