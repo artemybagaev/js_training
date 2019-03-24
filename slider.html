@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: flex;
+        }
+        
+        img {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+   <div class = 'wrap'>
+        <div id = 'slider'><img src="img/1.png" alt="pic"></div>
+        <div id = 'sliderTwo'><img src="img/2.png" alt="pic"></div>
+        <div id = 'sliderThree'><img src="img/3.png" alt="pic"></div>
+   </div>
+   <input id = "launch" type="submit" value = "Запуск">
+   <input id = "stop" type="submit" value = "Стоп">
+    
+    <script>
+        var images = ['1.png','2.png','3.png'];
+        
+        var sliderClass = document.querySelector('#slider');
+        var sliderImg = sliderClass.querySelector('img');
+        
+        var sliderTwoClass = document.querySelector('#sliderTwo');
+        var sliderTwoImg = sliderTwoClass.querySelector('img');
+        
+        var sliderThreeClass = document.querySelector('#sliderThree');
+        var sliderThreeImg = sliderThreeClass.querySelector('img');
+        
+        var butLaunch = document.querySelector('#launch');
+        butLaunch.addEventListener('click', slider);
+        butLaunch.addEventListener('click', sliderTwo);
+        butLaunch.addEventListener('click', sliderThree);
+        
+        var butStop = document.querySelector('#stop');
+        butStop.addEventListener('click', stop);
+        
+        let idOne;
+        function slider () {
+            let i = 1;
+            sliderImg.src = 'img/' + images[0];
+            idOne = setInterval(function() {
+                sliderImg.src = 'img/' + images[i];
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+            }, 1000)
+        }
+        
+        let idTwo;
+        function sliderTwo () {
+            let i = 2;
+            sliderTwoImg.src = 'img/' + images[1];
+            idTwo = setInterval(function() {
+                sliderTwoImg.src = 'img/' + images[i];
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+            }, 1000)
+        }
+        
+        let idThree;
+        function sliderThree () {
+            let i = 0;
+            sliderThreeImg.src = 'img/' + images[2];
+            idThree = setInterval(function() {
+                sliderThreeImg.src = 'img/' + images[i];
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+            }, 1000)
+        }
+        
+        function stop () {
+            clearInterval(idOne);
+            clearInterval(idTwo);
+            clearInterval(idThree);
+        }
+    </script>
+</body>
+</html>
