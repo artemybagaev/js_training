@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id='item'>0</p>
+    <input type="submit" value="Start" id = 'startbut'>
+    <input type="submit" value="Stop" id = 'stopbut'>
+    
+    <script>
+        var butStart = document.querySelector('#startbut');
+        butStart.addEventListener('click', start);
+        
+        var butStop = document.querySelector('#stopbut');
+        butStop.addEventListener('click', end);
+        
+        var startId;
+        function start() {
+            id = setInterval(timer,1000);
+            this.disabled = true;
+            butStop.disabled = false;
+            console.log(id);
+        }
+        
+        function end() {
+            clearInterval(id);
+            this.disabled = true;
+            butStart.disabled = false;
+        }
+        
+        function timer() {
+            var text = document.querySelector('#item');
+            text.innerHTML = parseInt(text.innerHTML) + 1;
+        }
+    </script>
+</body>
+</html>
