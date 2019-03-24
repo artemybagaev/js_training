@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <p id = 'time'>8</p>
+   <input type="submit" id = "submit" value = "Запустить таймер">
+    <script>
+        var but = document.querySelector('#submit');
+        but.addEventListener('click', start);
+        
+        function start () {
+            let id = setInterval(function() {
+                    var number = document.querySelector('#time');
+                    number.innerHTML = Number(number.innerHTML) - 1;
+                
+                    if ( Number(number.innerHTML) == 0 ) {
+                        but.disabled = true;
+                        clearInterval(id);
+                        but.value = 'Усе, хватит';
+                    }  
+            }, 1000)
+        }
+    </script>
+</body>
+</html>
