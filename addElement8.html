@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    Даны инпуты. Сделайте так, чтобы все инпуты по потери фокуса проверяли свое содержимое на правильное количество символов. Сколько символов должно быть в инпуте, указывается в атрибуте data-length. Если вбито правильное количество, то граница инпута становится зеленой, если неправильное - красной.
+    
+    <input type="text" data-length = '5'>
+    <input type="text" data-length = '5'>
+    <input type="text" data-length = '5'>
+    
+    <script>
+        var elems = document.getElementsByTagName('input');
+        
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].addEventListener('blur', clicker)
+        }
+        
+        function clicker () {
+            if (this.value.length < this.getAttribute('data-length')) {
+                this.style.borderColor="#FF0000";
+            } else {
+                this.style.borderColor="#89ff81";
+            }
+        }
+    </script>
+</body>
+</html>

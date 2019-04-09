@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <img src="img/1.png" alt="Fuck">
+   <img src="img/2.png" alt="Fuckyeah">
+   <img src="img/3.png" alt="">
+    <script>
+        var imgOne = document.getElementsByTagName('img');
+        console.log(imgOne);
+        for (let i = 0; i < imgOne.length; i++) {
+            imgOne[i].addEventListener('click', source)
+        }
+        
+        function source () {
+            alert(this.getAttribute('src'));
+        }
+    </script>
+</body>
+</html>

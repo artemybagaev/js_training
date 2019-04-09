@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            border: none;
+        }
+        div {
+            display: flex;
+            border: 1px solid black;
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Даны дивы. По первому нажатию на каждый див он красится красным фоном, по второму красится обратно и так далее каждый клик происходит чередование фона. Сделайте так, чтобы было две функции: одна красит в красный цвет, другая в зеленый и они сменяли друг друга через removeEventListener.
+    </p>
+    <main class = 'container'>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </main>
+    
+    <script>
+        var elems = document.getElementsByTagName('div');
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].addEventListener('click', redPainter)
+        }
+        
+        function redPainter () {
+            this.style.backgroundColor = 'red';
+            this.removeEventListener('click', redPainter);
+            this.addEventListener('click', greenPainter)
+        }
+        
+        function greenPainter () {
+            this.style.backgroundColor = 'green';
+            this.removeEventListener('click', greenPainter);
+            this.addEventListener('click', redPainter)
+        }
+    </script>
+</body>
+</html>

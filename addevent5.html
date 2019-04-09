@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    Привяжите всем инпутам следующее событие - по потери фокуса каждый инпут выводит свое value в абзац с id="test".
+    
+    <input type="text" value='Кал'>
+    <input type="text" value='Вот'>
+    <input type="text" value='Так'>
+    
+    <div id='test'>
+        
+    </div>
+    
+    <script>
+        var elems = document.getElementsByTagName('input');
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].addEventListener('click', mouseouter);
+        }
+        
+        function mouseouter () {
+            let elem = document.getElementById('test');
+            let newP = document.createElement('p');
+            
+            newP.innerHTML = this.value;
+            elem.appendChild(newP)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" title="">Ссылка 1</a>
+    <a href="#" title="">Ссылка 2</a>
+    <a href="#" title="">Ссылка 3</a>
+    
+    <script>
+        var elems = document.getElementsByTagName('a');
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].addEventListener('mouseover', onmouser);
+        }
+        
+        function onmouser () {
+            this.title = this.innerHTML
+        }
+    </script>
+</body>
+</html>
